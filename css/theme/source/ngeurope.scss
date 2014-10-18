@@ -25,6 +25,10 @@ $selectionBackgroundColor: #e7ad52;
 $mainFontSize: 30px;
 
 
+pre code {
+  background: #111!important;
+}
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------

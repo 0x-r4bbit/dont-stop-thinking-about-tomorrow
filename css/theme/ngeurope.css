@@ -3,6 +3,9 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+pre code {
+  background: #111111 !important; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
