@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/reveal.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/ngeurope.css" id="theme">
 
     <!-- For syntax highlighting -->
@@ -138,15 +139,51 @@
           <p style="font-size: 1.6em; line-height: 1.3em;">Inert chunks of clonable DOM that can be activated for later use.</p>
         </section>
 
+        <!-- <section> -->
+        <!--   <h2>What we did before...</h2> -->
+        <!--   <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;script id="mytemplate" type="text/x-handlebars-template"&gt; -->
+  <!-- <div> -->
+    <!-- <i class="icon-foo"></i> -->
+    <!-- <p>Lorem ipsum dolor sit amet, consectetuer.</p> -->
+  <!-- </div> -->
+<!-- &lt;/script&gt;</code></pre> -->
+        <!--   <ul class="fragment" style="margin-top: 1em; max-width: 800px;"> -->
+        <!--     <li ><span style="color: #7BDF80">Nothing rendered, script is not displayed by default</span></li> -->
+        <!--     <li style="margin-top: 0.3em;"><span style="color: #7BDF80">It's inert (yay!), JS isn't parsed because of its type</span></li> -->
+        <!--     <li style="margin-top: 0.3em;"><span style="color: #EF8C8C">Security issues, run-time string of user-supplied data can easily lead to XSS vulnerabilities</span></li> -->
+        <!--   </ul> -->
+        <!-- </section> -->
+
         <section>
-          <h2>What we did before...</h2>
-          <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;script id="mytemplate" type="text/x-handlebars-template"&gt;
-&lt;/script&gt;</code></pre>
-          <ul style="margin-top: 1em; max-width: 800px;">
-            <li class="fragment"><span style="color: green;">Nothing rendered, <code style="color: #222;">&lt;script&gt;</code> is <code style="color: #222;">display: none;</code> by default</span></li>
-            <li class="fragment"><span style="color: green;">It's inert (yay!), JS isn't parsed because of its type</span></li>
-            <li class="fragment"><span style="color: #B80707;">Security issues, run-time string of user-supplied data can easily lead to XSS vulnerabilities</span></li>
+          <h2>Defining templates</h2>
+
+          <pre style="font-size: 0.95em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="mytemplate"&gt;
+  &lt;img src="" alt="great image"&gt;
+  &lt;div class="comment"&gt;&lt;/div&gt;
+&lt;/template&gt;</code></pre>
+
+          <ul class="fragment" style="margin-top: 1em; max-width: 800px;">
+            <li >Clonable DOM</li>
+            <li style="margin-top: 0.3em;">Parsed, not rendered</li>
+            <li style="margin-top: 0.3em;">Stylesheets/Images aren't loaded, media isn't played, scripts don't run</li>
           </ul>
+
+          <aside class="notes">
+            - templates can be placed anywhere inside of head, body or frameset
+          </aside>
+        </section>
+
+        <section>
+          <h2>Activating templates</h2>
+          <pre style="font-size: 0.88em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var t = document.querySelector('#mytemplate');
+
+// set image source
+t.content.querySelector('img').src = 'logo.png';
+
+// clone and append document fragment
+document.body.appendChild(t.content.cloneNode(true));
+</code></pre>
+          <p style="margin-top: 2em;">You can activate templates by cloning their <code class="inline">content</code> document fragment.</p>
         </section>
 
         <section>
@@ -175,6 +212,66 @@
           <p style="font-size: 1.6em; line-height: 1.3em;">Shadow DOM gives us <strong>DOM tree encapsulation</strong> and <strong>style boundaries</strong>.</p>
         </section>
 
+
+        <section>
+          <div style="position: absolute; left: -5em; top: 4em;">
+          <code class="inline" style="font-size: 1.8em;">&lt;input type="time"&gt;</code>
+          <p style="margin-top: 2em;"><input style="height: 50px; font-size: 2em;" type="time"></p>
+          </div>
+          <div style="position: absolute; right: -5em; top: 0;">
+            <img src="img/input-shadow-dom.png">
+          </div>
+        </section>
+
+        <section data-background="#fff">
+          <img style="box-shadow: none; border: none;" src="img/shadow-trees.svg">
+        </section>
+
+        <section data-background="#fff">
+          <img style="box-shadow: none; border: none;" src="img/shadow-rendering.svg">
+        </section>
+
+        <section>
+          <h2 style="font-weight: bold;">Creating Shadow DOM</h2>
+
+          <p style="margin-top: 1.8em;"><code class="inline">.createShadowRoot()</code> creates a <strong>shadow root</strong> on a <strong>host element</strong>.</p>
+
+          <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;div&gt;Hello World!&lt;/div&gt;</code></pre>
+
+          <div>
+            <pre style="font-size: 0.98em; margin-top: 1.2em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var host = document.querySelector('div');
+var shadowRoot = host.createShadowRoot();
+shadowRoot.innerHTML = 'Hello ngEurope!';</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2 style="font-size: 1.8em; font-weight: bold;">Shadow DOM + HTML Templates</h2>
+
+          <p style="margin-top: 1.5em;">Simply combine the things we just learned.</p>
+
+          <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="custom-template"&gt;
+  &lt;p&gt;This is HTML Code&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+          <div>
+          <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var host = document.querySelector('#host');
+var shadowRoot = host.createShadowRoot();
+var t = document.querySelector('#custom-template');
+
+shadowRoot.appendChild(t.content.cloneNode(true));</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>So much more to cover</h2>
+
+          <ul style="margin-top: 2.4em;">
+            <li style="font-size: 1.2em;">Insertion Points/Content Projection using <code>&lt;content&gt;</code></li>
+            <li style="font-size: 1.2em; line-height: 1.4em; margin-top: 0.8em;">Shadow host styling with <code>:host</code>, <code>:host(selector)</code>, </code>:host-context(selector)</code></li>
+            <li style="font-size: 1.2em; margin-top: 0.8em;">Shadow tree stying with <code>::shadow</code> and </code>/deep/</code></li>
+        <li style="font-size: 1.2em; margin-top: 0.8em;">Multiple shadow roots and <code>&lt;shadow&gt;</code></li>
+          </ul>
+        </section>
         <section>
           <h2>Four Technologies</h2>
 
@@ -202,6 +299,44 @@
         </section>
 
         <section>
+          <h2>Registering new elements</h2>
+
+          <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">document.registerElement('custom-element', {
+  prototype: CustomProto
+});</code></pre>
+          <p style="margin-top: 1.5em;"><code class="inline">document.registerElement()</code> let's you register custom elements.</p>
+          <aside class="notes">
+            - name must contain a dash
+          </aside>
+        </section>
+
+        <section>
+          <h2>Protoype definition</h2>
+
+          <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var Proto = Object.create(HTMLElement);
+
+Proto.createdCallback = function () { 
+  /* e.g. create shadow root */
+};
+
+Proto.attributeChangedCallback = function () { 
+  /* ... */
+};
+
+Proto.fooProperty = 'bar';
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Instantiate Custom Elements</h2>
+
+          <pre style="font-size: 1em; line-height: 1.4; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><my-element></my-element></code></pre>
+          <h4 style="margin-top: 1em;">Or</h4>
+          <pre style="font-size: 0.85em; line-height: 1.4; margin-top: 1em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var myElement = document.createElement('my-element');
+document.appendChild(myElement);</code></pre>
+        </section>
+
+        <section>
           <h2>Four Technologies</h2>
 
           <ul style="list-style: none; margin-left: 0; margin-top: 1em;">
@@ -226,42 +361,64 @@
         <section>
           <h2>#include for the web</h2>
         </section>
+        <!-- end ANGULAR 1.* & WEB COMPONENTS -->
 
+        <section>
+          <h2>Usage</h2>
 
-        <!-- ANGULAR 1.* & WEB COMPONENTS -->
+          <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;link rel="import" href="path/to/import.html"&gt;</code></pre>
+
+          <p style="margin-top: 1.8em;">Use <code class="inline">&lt;link rel="import"&gt;</code> to import external HTML documents.</p>
+
+        </section>
+
+        <!-- ANGULAR 2.0 & WEB COMPONENTS -->
+        <section>
+          <h2>Cloning contents into main document</h2>
+
+          <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var link = document.querySelector('link[rel="import"]');
+var content = link.import;
+          
+var el = content.querySelector('.widget');
+
+document.body.appendChild(el);</code></pre>
+
+          <p style="margin-top: 1em;">The imports <code>.import</code> property can be used to query DOM objects.</p>
+        </section>
+
         <section>
           <h2>AngularJS + Web Components</h2>
           <h3>(today)</h3>
         </section>
 
         <section>
-            <h2>Example</h2>
+          <h2>Example</h2>
         </section>
 
         <section>
-            <h2>Everything is DOM</h2>
-            <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
+          <h2>Everything is DOM</h2>
+          <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
         </section>
 
         <section>
-            <h2>DOM/Custom element interface</h2>
-            <ul>
-                <li class="fragment">DOM attributes</li>
-                <li class="fragment">DOM events</li>
-                <li class="fragment">Element properties</li>
-                <li class="fragment">Element methods</li>
-            </ul>
+          <h2>DOM/Custom element interface</h2>
+          <ul>
+            <li class="fragment">DOM attributes</li>
+            <li class="fragment">DOM events</li>
+            <li class="fragment">Element properties</li>
+            <li class="fragment">Element methods</li>
+          </ul>
         </section>
 
         <section>
-            <h2>API implementer</h2>
-            <p>Component implementer</p>
+          <h2>API implementer</h2>
+          <p>Component implementer</p>
         </section>
 
         <section>
-            <h2>API consumer</h2>
-            <pre class="fragment">
-                <code>// The element
+          <h2>API consumer</h2>
+          <pre class="fragment">
+              <code>// The element
 var element = ...;
 
 // DOM attribute
@@ -279,29 +436,27 @@ element.fly();</code>
         </section>
 
         <section>
-            <h2>Angular as a custom element consumer</h2>
-            <p>Angular doesn't and shouldn't know about custom elements</p>
-            <p>Angular should treat or bind to a custom element just like any other native element</p>
+          <h2>Angular as a custom element consumer</h2>
+          <p>Angular doesn't and shouldn't know about custom elements</p>
+          <p>Angular should treat or bind to a custom element just like any other native element</p>
         </section>
 
         <section>
             <h2>Data binding</h2>
             <ul>
-                <li class="fragment">writing data into the element</li>
-                <li class="fragment">reading data from the element</li>
+              <li class="fragment">writing data into the element</li>
+              <li class="fragment">reading data from the element</li>
             </ul>
         </section>
 
         <section>
-            <h3></h3>
-        </section>
-        <!-- end ANGULAR 1.* & WEB COMPONENTS -->
-
-
-        <!-- ANGULAR 2.0 & WEB COMPONENTS -->
-        <section>
           <h2>AngularJS + Web Components</h2>
           <h3>(tomorrow)</h3>
+        </section>
+
+        <section>
+          <h1>Warning</h1>
+          <p>Everything in this section is based on wip documents. Things might change in the future.</p>
         </section>
         <!-- end ANGULAR 2.0 & WEB COMPONENTS -->
 
