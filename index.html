@@ -387,6 +387,26 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
+            <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2>
+            <ul>
+                <li class="fragment">DOM attributes</li>
+                <li class="fragment">DOM events</li>
+                <li class="fragment">Element properties</li>
+                <li class="fragment">Element methods</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2>
+            <ul>
+                <li>DOM attributes</li>
+                <li>DOM events</li>
+                <li>Element properties</li>
+                <li>Element methods</li>
+            </ul>
+        </section>
+
+        <section>
             <p style="float: left">It could look something like this:</p>
             <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
                 <code><div ng-controller="MyCtrl">
@@ -412,54 +432,15 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2>
-            <ul>
-                <li class="fragment">DOM attributes</li>
-                <li class="fragment">DOM events</li>
-                <li class="fragment">Element properties</li>
-                <li class="fragment">Element methods</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2>
-            <ul>
-                <li>DOM attributes</li>
-                <li>DOM events</li>
-                <li>Element properties</li>
-                <li>Element methods</li>
-            </ul>
-        </section>
-
-        <section>
-          <h2>API implementer</h2>
-          <p>Component implementer</p>
-        </section>
-
-        <section>
-          <h2>API consumer</h2>
-          <pre class="fragment">
-              <code>// The element
-var element = ...;
-
-// DOM attribute
-element.setAttribute('name', 'Superman');
-
-// DOM event
-element.addEventListener('change', ...);
-
-// Element property
-element.cape = 'red';
-
-// Element method
-element.fly();</code>
+            <h2>Angular as a custom element consumer</h2>
+            <pre class="fragment" style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
+                <code><div ng-controller="MyCtrl">
+                    <button name="good-old-button">Button</button>
+                    <mega-button nickname="{{nickname}}">Super button</mega-button>
+                </div></code>
             </pre>
-        </section>
-
-        <section>
-          <h2>Angular as a custom element consumer</h2>
-          <p>Angular doesn't and shouldn't know about custom elements</p>
-          <p>Angular should treat or bind to a custom element just like any other native element</p>
+            <p class="fragment">Angular doesn't and shouldn't know about custom elements</p>
+            <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
         </section>
 
         <section>
@@ -468,6 +449,10 @@ element.fly();</code>
               <li class="fragment">writing data into the element</li>
               <li class="fragment">reading data from the element</li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Data binding</h2>
         </section>
 
         <section>
