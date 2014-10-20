@@ -139,21 +139,6 @@
           <p style="font-size: 1.6em; line-height: 1.3em;">Inert chunks of clonable DOM that can be activated for later use.</p>
         </section>
 
-        <!-- <section> -->
-        <!--   <h2>What we did before...</h2> -->
-        <!--   <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;script id="mytemplate" type="text/x-handlebars-template"&gt; -->
-  <!-- <div> -->
-    <!-- <i class="icon-foo"></i> -->
-    <!-- <p>Lorem ipsum dolor sit amet, consectetuer.</p> -->
-  <!-- </div> -->
-<!-- &lt;/script&gt;</code></pre> -->
-        <!--   <ul class="fragment" style="margin-top: 1em; max-width: 800px;"> -->
-        <!--     <li ><span style="color: #7BDF80">Nothing rendered, script is not displayed by default</span></li> -->
-        <!--     <li style="margin-top: 0.3em;"><span style="color: #7BDF80">It's inert (yay!), JS isn't parsed because of its type</span></li> -->
-        <!--     <li style="margin-top: 0.3em;"><span style="color: #EF8C8C">Security issues, run-time string of user-supplied data can easily lead to XSS vulnerabilities</span></li> -->
-        <!--   </ul> -->
-        <!-- </section> -->
-
         <section>
           <h2>Defining templates</h2>
 
@@ -361,7 +346,6 @@ document.appendChild(myElement);</code></pre>
         <section>
           <h2>#include for the web</h2>
         </section>
-        <!-- end ANGULAR 1.* & WEB COMPONENTS -->
 
         <section>
           <h2>Usage</h2>
@@ -372,7 +356,6 @@ document.appendChild(myElement);</code></pre>
 
         </section>
 
-        <!-- ANGULAR 2.0 & WEB COMPONENTS -->
         <section>
           <h2>Cloning contents into main document</h2>
 
@@ -385,14 +368,17 @@ document.body.appendChild(el);</code></pre>
 
           <p style="margin-top: 1em;">The imports <code>.import</code> property can be used to query DOM objects.</p>
         </section>
+        <!-- end WEB COMPONENTS -->
 
+
+        <!-- ANGULAR 1.* & WEB COMPONENTS -->
         <section>
-          <h2>AngularJS + Web Components</h2>
-          <h3>(today)</h3>
+          <h2>AngularJS & Web Components</h2>
         </section>
 
         <section>
-          <h2>Example</h2>
+            <h1>?</h1>
+            <h3 class="fragment">How can we use Web Components with AngularJS</h3>
         </section>
 
         <section>
@@ -401,13 +387,48 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-          <h2>DOM/Custom element interface</h2>
-          <ul>
-            <li class="fragment">DOM attributes</li>
-            <li class="fragment">DOM events</li>
-            <li class="fragment">Element properties</li>
-            <li class="fragment">Element methods</li>
-          </ul>
+            <p style="float: left">It could look something like this:</p>
+            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
+                <code><div ng-controller="MyCtrl">
+   <button name="good-old-button">Button</button>
+   <mega-button nickname="Speedy">Super button</mega-button>
+</div></code>
+            </pre>
+        </section>
+
+        <section>
+            <p style="float: left">... or like this:</p>
+            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
+                <code><div ng-controller="MyCtrl">
+   <button name="good-old-button">Button</button>
+   <mega-button nickname="{{nickname}}">Super button</mega-button>
+</div></code>
+            </pre>
+        </section>
+
+        <section>
+            <h1>?++</h1>
+            <h3 class="fragment">How does Angular interact with Web Components?</h3>
+        </section>
+
+        <section>
+            <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2>
+            <ul>
+                <li class="fragment">DOM attributes</li>
+                <li class="fragment">DOM events</li>
+                <li class="fragment">Element properties</li>
+                <li class="fragment">Element methods</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2>
+            <ul>
+                <li>DOM attributes</li>
+                <li>DOM events</li>
+                <li>Element properties</li>
+                <li>Element methods</li>
+            </ul>
         </section>
 
         <section>
@@ -453,7 +474,10 @@ element.fly();</code>
           <h2>AngularJS + Web Components</h2>
           <h3>(tomorrow)</h3>
         </section>
+        <!-- end ANGULAR 1.* & WEB COMPONENTS -->
 
+
+        <!-- ANGULAR 2.0 & WEB COMPONENTS -->
         <section>
           <h1>Warning</h1>
           <p>Everything in this section is based on wip documents. Things might change in the future.</p>
