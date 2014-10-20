@@ -368,6 +368,11 @@ document.body.appendChild(el);</code></pre>
         </section>
         <!-- end WEB COMPONENTS -->
 
+        <section>
+          <h2>Putting it all together</h2>
+          <h3>[insert ng-duo component here]</h3>
+        </section>
+
 
         <!-- ANGULAR 1.* & WEB COMPONENTS -->
         <section>
@@ -375,38 +380,46 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <h1>?</h1>
-            <h3 class="fragment">How can we use Web Components with AngularJS</h3>
+          <p style="font-size: 1.4em; line-height: 1.2em;">Can we use <strong>Web Components</strong> together with <strong>AngularJS</strong>?</p>
         </section>
 
         <section>
-          <h2>Everything is DOM</h2>
-          <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
+          <h2>Yes we can, everything is DOM</h2>
+          <p style="font-size: 1.2em; margin-top: 1.5em;">So for Angular, this...</p>
+          <pre style="font-size: 1em; margin-top: 0.8em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div></div></code></pre>
+          <p style="font-size: 1.2em;">...is the same as this...</p>
+          <pre style="font-size: 1em; margin-top: 0.8em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><custom-directive></custom-directive></code></pre>
+          <p style="font-size: 1.2em;">...or this.</p>
+          <pre style="font-size: 1em; margin-top: 0.8em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><custom-web-component></custom-web-component></code></pre>
+          <!-- <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p> -->
         </section>
 
         <section>
-            <p style="float: left">It could look something like this:</p>
-            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
-                <code><div ng-controller="MyCtrl">
-   <button name="good-old-button">Button</button>
-   <mega-button nickname="Speedy">Super button</mega-button>
+            <h2>Web Components inside Angular world</h2>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+  <button name="good-old-button">Button</button>
+  <mega-button 
+    nickname="Speedy">
+    Super button
+  </mega-button>
 </div></code>
             </pre>
         </section>
 
         <section>
-            <p style="float: left">... or like this:</p>
-            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
-                <code><div ng-controller="MyCtrl">
-   <button name="good-old-button">Button</button>
-   <mega-button nickname="{{nickname}}">Super button</mega-button>
+            <h2>Web Components inside Angular world</h2>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+  <button name="good-old-button">Button</button>
+  <mega-button 
+    nickname="{{nickname}}">
+    Super button
+  </mega-button>
 </div></code>
             </pre>
         </section>
 
         <section>
-            <h1>?++</h1>
-            <h3 class="fragment">How does Angular interact with Web Components?</h3>
+          <p style="font-size: 1.4em; line-height: 1.2em;">What about interaction between <strong>Web Components</strong> and <strong>Angular?</strong></p>
         </section>
 
         <section>
