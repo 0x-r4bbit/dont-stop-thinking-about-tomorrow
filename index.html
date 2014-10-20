@@ -235,16 +235,14 @@ shadowRoot.innerHTML = 'Hello ngEurope!';</code></pre>
 
           <p style="margin-top: 1.5em;">Simply combine the things we just learned.</p>
 
-          <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="custom-template"&gt;
-  &lt;p&gt;This is HTML Code&lt;/p&gt;
-&lt;/template&gt;</code></pre>
-          <div>
+          <!-- <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="custom-template"&gt; -->
+  <!-- &lt;p&gt;This is HTML Code&lt;/p&gt; -->
+<!-- &lt;/template&gt;</code></pre> -->
           <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var host = document.querySelector('#host');
 var shadowRoot = host.createShadowRoot();
 var t = document.querySelector('#custom-template');
 
 shadowRoot.appendChild(t.content.cloneNode(true));</code></pre>
-          </div>
         </section>
 
         <section>
