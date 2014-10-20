@@ -235,16 +235,14 @@ shadowRoot.innerHTML = 'Hello ngEurope!';</code></pre>
 
           <p style="margin-top: 1.5em;">Simply combine the things we just learned.</p>
 
-          <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="custom-template"&gt;
-  &lt;p&gt;This is HTML Code&lt;/p&gt;
-&lt;/template&gt;</code></pre>
-          <div>
+          <!-- <pre style="font-size: 1em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">&lt;template id="custom-template"&gt; -->
+  <!-- &lt;p&gt;This is HTML Code&lt;/p&gt; -->
+<!-- &lt;/template&gt;</code></pre> -->
           <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;">var host = document.querySelector('#host');
 var shadowRoot = host.createShadowRoot();
 var t = document.querySelector('#custom-template');
 
 shadowRoot.appendChild(t.content.cloneNode(true));</code></pre>
-          </div>
         </section>
 
         <section>
@@ -370,6 +368,11 @@ document.body.appendChild(el);</code></pre>
         </section>
         <!-- end WEB COMPONENTS -->
 
+        <section>
+          <h2>Putting it all together</h2>
+          <h3>[insert ng-duo component here]</h3>
+        </section>
+
 
         <!-- ANGULAR 1.* & WEB COMPONENTS -->
         <section>
@@ -378,12 +381,12 @@ document.body.appendChild(el);</code></pre>
 
         <section>
             <h1>?</h1>
-            <h3 class="fragment">How can we use Web Components with AngularJS</h3>
+            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS</h3>
         </section>
 
         <section>
-          <h2>Everything is DOM</h2>
-          <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
+            <h2>Everything is DOM</h2>
+            <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
         </section>
 
         <section>
@@ -407,37 +410,43 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <p style="float: left">It could look something like this:</p>
-            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
-                <code><div ng-controller="MyCtrl">
-   <button name="good-old-button">Button</button>
-   <mega-button nickname="Speedy">Super button</mega-button>
+            <h2>Web Components inside Angular world</h2>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+  <button name="good-old-button">Button</button>
+  <mega-button 
+    nickname="Speedy">
+    Super button
+  </mega-button>
 </div></code>
             </pre>
         </section>
 
         <section>
-            <p style="float: left">... or like this:</p>
-            <pre style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
-                <code><div ng-controller="MyCtrl">
-   <button name="good-old-button">Button</button>
-   <mega-button nickname="{{nickname}}">Super button</mega-button>
+            <h2>Web Components inside Angular world</h2>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+  <button name="good-old-button">Button</button>
+  <mega-button 
+    nickname="{{nickname}}">
+    Super button
+  </mega-button>
 </div></code>
             </pre>
         </section>
 
         <section>
             <h1>?++</h1>
-            <h3 class="fragment">How does Angular interact with Web Components?</h3>
+            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components?</h3>
         </section>
 
         <section>
             <h2>Angular as a custom element consumer</h2>
-            <pre class="fragment" style="font-size: 1em; margin-top: 2.5em; box-shadow: none;">
-                <code><div ng-controller="MyCtrl">
-                    <button name="good-old-button">Button</button>
-                    <mega-button nickname="{{nickname}}">Super button</mega-button>
-                </div></code>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+   <button name="good-old-button">Button</button>
+   <mega-button
+     nickname="{{nickname}}">
+     Super button
+   </mega-button>
+</div></code>
             </pre>
             <p class="fragment">Angular doesn't and shouldn't know about custom elements</p>
             <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
@@ -464,9 +473,32 @@ document.body.appendChild(el);</code></pre>
 
         <!-- ANGULAR 2.0 & WEB COMPONENTS -->
         <section>
-          <h1>Warning</h1>
-          <p>Everything in this section is based on wip documents. Things might change in the future.</p>
+          <h1>Warning!</h1>
+          <p style="margin-top: 2em; line-height: 1.6em;">Everything in this section is based on wip documents. Things might change in the future.</p>
         </section>
+
+        <section data-background="img/igor-punching-brian.gif">
+          <div style="position: relative;"class="fragment">
+          <span style="position: absolute; font-size: 2em; right: -1em;">&larr; Igor</span>
+          <span style="position: absolute; font-size: 2em; left: -2em; top: 3.5em;">Brian &rarr;</span>
+          </div>
+        </section>
+
+        <section>
+          <p style="font-size: 1.4em;">So how does <strong>Angular 2.0</strong> tackle the existing issues in the future?</p>
+        </section>
+
+        <section>
+          <h2>Listening to *any* events</h2>
+          <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><ng-duo on-volume-changed="doSomething()"></ng-duo></code></pre>
+
+          <p style="margin-top: 1.8em;">Angular 2.0 comes with a general <code>on-*</code> directive, so that any event can be listened to.</p>
+        </section>
+
+        <section>
+          <h2>Binding to properties/attributes</h2>
+        </section>
+
         <!-- end ANGULAR 2.0 & WEB COMPONENTS -->
 
       </div>
