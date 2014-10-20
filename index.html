@@ -411,7 +411,8 @@ document.body.appendChild(el);</code></pre>
 
         <section>
             <h2>Web Components inside Angular world</h2>
-            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+            <p class="fragment">could look like this:</p>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;" class="fragment"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
   <button name="good-old-button">Button</button>
   <mega-button 
     nickname="Speedy">
@@ -423,7 +424,8 @@ document.body.appendChild(el);</code></pre>
 
         <section>
             <h2>Web Components inside Angular world</h2>
-            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+            <p>... or like this:</p>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;" class="fragment"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
   <button name="good-old-button">Button</button>
   <mega-button 
     nickname="{{nickname}}">
@@ -461,7 +463,37 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <h2>Data binding</h2>
+            <h2>Data binding - writing data</h2>
+            <ul>
+                <li class="fragment">Angular detects the change using its own internal mechanism</li>
+                <li class="fragment">Angular reflects the change into the elements attribute or property</li>
+                <li class="fragment">Element processes the change</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data binding - reading data</h2>
+            <ul>
+                <li class="fragment">Element notifies the outside world that it's state has changed</li>
+                <li class="fragment">Angular processes the change</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data binding - reading data</h2>
+            <p class="fragment">A custom element can change DOM attributes or Element properties</p>
+            <ul>
+                <li class="fragment">DOM attributes changes can be detected using DOM Mutation Observers</li>
+                <li class="fragment">Element properties changes will be detected most likely using events</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>example</h2>
+        </section>
+
+        <section>
+            <h2>example with fix</h2>
         </section>
 
         <section>
