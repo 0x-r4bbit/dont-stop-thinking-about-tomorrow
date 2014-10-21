@@ -381,11 +381,13 @@ document.body.appendChild(el);</code></pre>
 
         <section>
             <h1>?</h1>
-            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS</h3>
+            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS today</h3>
         </section>
 
         <section>
             <h2>Everything is DOM</h2>
+            <p class="fragment">Web Components extend the vocabulary of HTML elements</p>
+            <p class="fragment">Native and custom elements should be indistinguishable</p>
             <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
         </section>
 
@@ -437,7 +439,15 @@ document.body.appendChild(el);</code></pre>
 
         <section>
             <h1>?++</h1>
-            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components?</h3>
+            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components today?</h3>
+        </section>
+
+        <section>
+            <p>
+                <span style="font-weight: bold; font-size: 1.1em; color: rgb(189, 124, 124)">Angular doesn't know</span>
+                <span class="fragment">and shouldn't know</span>
+                <span style="font-weight: bold; font-size: 1.1em; color: rgb(189, 124, 124)">about custom elements</span></p>
+            <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
         </section>
 
         <section>
@@ -450,15 +460,13 @@ document.body.appendChild(el);</code></pre>
    </mega-button>
 </div></code>
             </pre>
-            <p class="fragment">Angular doesn't and shouldn't know about custom elements</p>
-            <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
         </section>
 
         <section>
             <h2>Data binding</h2>
             <ul>
-              <li class="fragment">writing data into the element</li>
-              <li class="fragment">reading data from the element</li>
+              <li class="fragment">Writing data into the element (Angular to Custom Element)</li>
+              <li class="fragment">Reading data from the element (Custom Element to Angular)</li>
             </ul>
         </section>
 
