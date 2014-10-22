@@ -19,7 +19,7 @@ angular.module('ngDuoApp')
             template: '<div>' +
                           '<img class="angular-heroes" ng-src="{{toTheRescue}}">' +
                           '<audio ng-show="false">' +
-                              '<source src="/sounds/ThemeSong.mp3" type="audio/mpeg">' +
+                              '<source src="/ngDuoApp/sounds/ThemeSong.mp3" type="audio/mpeg">' +
                           '</audio>' +
                       '</div>'
         }
