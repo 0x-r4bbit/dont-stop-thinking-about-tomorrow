@@ -73,7 +73,7 @@
           <h1 style="margin-top: 0.5em; font-size: 3.5em;">"Don't stop thinking about tomorrow"</h1>
           <h3 style="margin-top: 0.8em;">AngularJS and Web Components</h3>
           <p>
-            <small>By <a href="http://twitter.com/carmenpopoviciu">Carmen Popoviciu</a> and
+            <small style="font-size: 0.7em;">By <a href="http://twitter.com/carmenpopoviciu">Carmen Popoviciu</a> and
                       <a href="http://twitter.com/PascalPrecht">Pascal Precht</a> a.k.a
                       <a href="img/ng-duo.gif">ng-duo</a>
             </small>
@@ -379,9 +379,15 @@ document.body.appendChild(el);</code></pre>
         </section>
         <!-- end WEB COMPONENTS -->
 
-        <section ng-controller="MainCtrl">
+        <section>
           <h2>Putting it all together</h2>
-          <x-ngduo to-the-rescue="{{heroesOfTheHour}}"></x-ngduo>
+        </section>
+
+        <section ng-controller="MainCtrl">
+          <h2><code>&lt;x-ngduo&gt;&lt;/x-ngduo&gt;</code></h2>
+          <div class="fragment" style="margin-top: 2.5em;">
+            <x-ngduo to-the-rescue="{{heroesOfTheHour}}"></x-ngduo>
+          </div>
         </section>
 
 
@@ -390,37 +396,37 @@ document.body.appendChild(el);</code></pre>
           <h2>AngularJS & Web Components</h2>
         </section>
 
-        <section>
-            <h1 style="font-size: 5em;">?</h1>
-            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS today</h3>
-        </section>
+        <!-- <section> -->
+        <!--     <h1 style="font-size: 5em;">?</h1> -->
+        <!--     <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS today</h3> -->
+        <!-- </section> -->
 
-        <section>
-            <h2>Everything is DOM</h2>
-            <p class="fragment">Web Components extend the vocabulary of HTML elements</p>
-            <p class="fragment">Native and custom elements should be indistinguishable</p>
-            <p class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p>
-        </section>
+        <!-- <section> -->
+        <!--     <h2>Everything is DOM</h2> -->
+        <!--     <p style="margin-top: 2.5em;" class="fragment">Web Components extend the vocabulary of HTML elements</p> -->
+        <!--     <p class="fragment">Native and custom elements should be indistinguishable</p> -->
+        <!--     <p style="font-size: 1.2em;margin-top: 1em;"class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p> -->
+        <!-- </section> -->
 
-        <section>
-            <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2>
-            <ul style="margin-top: 2em;">
-                <li style="font-size: 1.4em;">DOM attributes</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li>
-            </ul>
-        </section>
+        <!-- <section> -->
+        <!--     <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2> -->
+        <!--     <ul style="margin-top: 2em;"> -->
+        <!--         <li style="font-size: 1.4em;">DOM attributes</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li> -->
+        <!--     </ul> -->
+        <!-- </section> -->
 
-        <section>
-            <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2>
-            <ul style="margin-top: 2em;">
-                <li style="font-size: 1.4em;">DOM attributes</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li>
-                <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li>
-            </ul>
-        </section>
+        <!-- <section> -->
+        <!--     <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2> -->
+        <!--     <ul style="margin-top: 2em;"> -->
+        <!--         <li style="font-size: 1.4em;">DOM attributes</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li> -->
+        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li> -->
+        <!--     </ul> -->
+        <!-- </section> -->
 
         <section>
             <h2>Web Components inside Angular world</h2>
@@ -450,25 +456,14 @@ document.body.appendChild(el);</code></pre>
             </pre>
         </section>
 
-        <section>
-            <h1 style="font-size: 5em;">?++</h1>
-            <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components today?</h3>
-        </section>
+        <!-- <section> -->
+        <!--     <h1 style="font-size: 5em;">?++</h1> -->
+        <!--     <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components today?</h3> -->
+        <!-- </section> -->
 
         <section>
-            <p style="font-size: 1.4em;">
-                <span style="font-weight: bold; font-size: 1.1em;">Angular doesn't know</span>
-                <span class="fragment">and shouldn't know</span>
-                <span style="font-weight: bold; font-size: 1.1em;">about custom elements</span></p>
+            <p style="font-size: 1.4em;">Angular doesn't know and shouldn't know about custom elements.</p>
             <!-- <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p> -->
-        </section>
-
-        <section>
-            <h2>Data binding</h2>
-            <ul style="margin-top: 2em;">
-              <li style="font-size: 1.2em; line-height: 1.2em;"class="fragment">Writing data into the element (Angular &rarr; Custom Element)</li>
-              <li style="margin-top: 0.3em; font-size: 1.2em; line-height: 1.2em;"class="fragment">Reading data from the element (Custom Element &rarr; Angular)</li>
-            </ul>
         </section>
 
         <section>
@@ -497,16 +492,15 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <h2>Data binding - reading data</h2>
-            <p class="fragment">A custom element can change DOM attributes or Element properties</p>
-            <ul>
-                <li class="fragment">DOM attributes changes can be detected using DOM Mutation Observers</li>
-                <li class="fragment">Element properties changes will be detected most likely using events</li>
-            </ul>
+          <p style="font-size: 1.4em; line-height: 1.2em;">So how do custom elements actually notify the outside world?</p>
         </section>
 
         <section>
-            <h2>example</h2>
+            <p style="font-size: 1.4em; margin-top: 1.5em;">A custom element can change DOM attributes or Element properties.</p>
+            <ul style="margin-top: 1.5em;">
+                <li style="font-size: 1.2em; line-height: 1.2em;"class="fragment">DOM attributes changes can be detected using DOM Mutation Observers</li>
+                <li style="font-size: 1.2em; line-height: 1.2em; margin-top: 0.3em;"class="fragment">Element properties changes will be detected most likely using events</li>
+            </ul>
         </section>
 
         <section ng-controller="MainCtrl">
