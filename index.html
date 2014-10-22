@@ -422,11 +422,11 @@ document.body.appendChild(el);</code></pre>
             </ul>
         </section>
 
-        <!--<section>
+        <section>
             <h2>Web Components inside Angular world</h2>
             <div class="fragment">
               <p style="margin-top: 1.5em;">Could look like this...</p>
-              <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+              <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><div ng-controller="MyCtrl">
   <button name="good-old-button">Button</button>
   <mega-button 
     nickname="Speedy">
@@ -435,12 +435,12 @@ document.body.appendChild(el);</code></pre>
 </div></code>
             </pre>
               </div>
-        </section>-->
+        </section>
 
-        <!--<section>
+        <section>
             <h2>Web Components inside Angular world</h2>
             <p style="margin-top: 1.5em;">...or like this:</p>
-            <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
+            <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><div ng-controller="MyCtrl">
   <button name="good-old-button">Button</button>
   <mega-button 
     nickname="{{nickname}}">
@@ -448,7 +448,7 @@ document.body.appendChild(el);</code></pre>
   </mega-button>
 </div></code>
             </pre>
-        </section>-->
+        </section>
 
         <section>
             <h1 style="font-size: 5em;">?++</h1>
@@ -456,49 +456,43 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-            <p>
-                <span style="font-weight: bold; font-size: 1.1em; color: rgb(189, 124, 124)">Angular doesn't know</span>
+            <p style="font-size: 1.4em;">
+                <span style="font-weight: bold; font-size: 1.1em;">Angular doesn't know</span>
                 <span class="fragment">and shouldn't know</span>
-                <span style="font-weight: bold; font-size: 1.1em; color: rgb(189, 124, 124)">about custom elements</span></p>
-            <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
+                <span style="font-weight: bold; font-size: 1.1em;">about custom elements</span></p>
+            <!-- <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p> -->
         </section>
-
-        <!--<section>
-            <h2>Angular as a custom element consumer</h2>
-            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;" class="fragment"><code style="padding: 1em; border-radius: 0.3em;"><div ng-controller="MyCtrl">
-   <button name="good-old-button">Button</button>
-   <mega-button
-     nickname="{{nickname}}">
-     Super button
-   </mega-button>
-</div></code>
-            </pre>
-            <p style="font-size: 1.2em;" class="fragment">Angular doesn't and shouldn't know about custom elements</p>
-            <p style="font-size: 1.2em;"class="fragment">Angular should treat or bind to a custom element just like any other native element</p>
-        </section>-->
 
         <section>
             <h2>Data binding</h2>
-            <ul>
-              <li class="fragment">Writing data into the element (Angular to Custom Element)</li>
-              <li class="fragment">Reading data from the element (Custom Element to Angular)</li>
+            <ul style="margin-top: 2em;">
+              <li style="font-size: 1.2em; line-height: 1.2em;"class="fragment">Writing data into the element (Angular &rarr; Custom Element)</li>
+              <li style="margin-top: 0.3em; font-size: 1.2em; line-height: 1.2em;"class="fragment">Reading data from the element (Custom Element &rarr; Angular)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Data binding</h2>
+            <ul style="margin-top: 2em;">
+              <li style="font-size: 1.4em; line-height: 1.2em;">Writing data (Angular &rarr; Custom Element)</li>
+              <li style="margin-top: 0.3em; font-size: 1.4em; line-height: 1.2em;">Reading data (Angular &larr; Custom Element)</li>
             </ul>
         </section>
 
         <section>
             <h2>Data binding - writing data</h2>
-            <ul>
-                <li class="fragment">Angular detects the change using its own internal mechanism</li>
-                <li class="fragment">Angular reflects the change into the elements attribute or property</li>
-                <li class="fragment">Element processes the change</li>
+            <ul style="margin-top: 2em;">
+                <li style="font-size: 1.2em; line-height: 1.2em;" class="fragment">Angular detects the change using its own internal mechanism</li>
+                <li style="font-size: 1.2em; line-height: 1.2em; margin-top: 0.3em;" class="fragment">Angular reflects the change into the elements attribute or property</li>
+                <li style="font-size: 1.2em; line-height: 1.2em; margin-top: 0.3em;" class="fragment">Element processes the change</li>
             </ul>
         </section>
 
         <section>
             <h2>Data binding - reading data</h2>
-            <ul>
-                <li class="fragment">Element notifies the outside world that it's state has changed</li>
-                <li class="fragment">Angular processes the change</li>
+            <ul style="margin-top: 2em;">
+                <li style="font-size: 1.2em; line-height: 1.2em;" class="fragment">Element notifies the outside world that it's state has changed</li>
+                <li style="font-size: 1.2em; line-height: 1.2em; margin-top: 0.3em;" class="fragment">Angular processes the change</li>
             </ul>
         </section>
 
@@ -540,6 +534,7 @@ document.body.appendChild(el);</code></pre>
         <section>
           <h1 style="color: #F97474;" class="blink">Warning!</h1>
           <p style="margin-top: 2em; font-size: 1.2em; line-height: 1.6em;">Everything in this section is based on wip documents. Things might change in the future.</p>
+          <p style="margin-top: 2em;">(Do not try this at home!)</p>
         </section>
 
         <section data-background="img/igor-punching-brian.gif">
@@ -555,7 +550,7 @@ document.body.appendChild(el);</code></pre>
 
         <section>
           <h2>Listening to *any* events</h2>
-          <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;"><ng-duo on-volume-changed="doSomething()"></ng-duo></code></pre>
+          <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><ng-duo on-volume-changed="doSomething()"></ng-duo></code></pre>
 
           <p style="margin-top: 1.8em;">Angular 2.0 comes with a general <code>on-*</code> directive, so that any event can be listened to.</p>
         </section>
