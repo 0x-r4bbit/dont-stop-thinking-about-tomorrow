@@ -3,7 +3,7 @@
 angular.module('ngDuoApp')
   .controller('MainCtrl', function ($scope) {
         // hardcoded paths of the images of our 'angular' super heroes
-        var SUPER_HEROES = ['/ngDuoApp/images/ng-duo.gif', '/ngDuoApp/images/superhero4.gif', '/ngDuoApp/images/superhero.ico'];
+        var SUPER_HEROES = ['/ngDuoApp/images/superhero.ico', '/ngDuoApp/images/ng-duo.gif', '/ngDuoApp/images/1.gif', '/ngDuoApp/images/2.gif', '/ngDuoApp/images/3.gif'];
 
         $scope.superHeroes = SUPER_HEROES;
         $scope.heroesOfTheHour = $scope.superHeroes[0];
