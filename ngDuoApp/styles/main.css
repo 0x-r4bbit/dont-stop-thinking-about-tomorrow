@@ -1,0 +1,34 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.world-container {
+    float: left;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px 10px 10px 75px;
+    width: 500px;
+    font-family: verdana;
+}
+
+.world-container h2 {
+    color: rgb(221, 14, 14);
+}
+
+.super-header {
+    background: rgb(236, 236, 236);
+    height: 150px;
+    padding: 10px;
+}
+
+.super-header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.angular-heroes {
+    cursor: pointer;
+}
