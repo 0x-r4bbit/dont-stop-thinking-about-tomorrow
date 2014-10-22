@@ -396,48 +396,12 @@ document.body.appendChild(el);</code></pre>
           <h2>AngularJS & Web Components</h2>
         </section>
 
-        <!-- <section> -->
-        <!--     <h1 style="font-size: 5em;">?</h1> -->
-        <!--     <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How can we use Web Components with AngularJS today</h3> -->
-        <!-- </section> -->
-
-        <!-- <section> -->
-        <!--     <h2>Everything is DOM</h2> -->
-        <!--     <p style="margin-top: 2.5em;" class="fragment">Web Components extend the vocabulary of HTML elements</p> -->
-        <!--     <p class="fragment">Native and custom elements should be indistinguishable</p> -->
-        <!--     <p style="font-size: 1.2em;margin-top: 1em;"class="fragment"><strong>&lt;button&gt;</strong> | <strong>&lt;mega-button&gt;</strong></p> -->
-        <!-- </section> -->
-
-        <!-- <section> -->
-        <!--     <h2><span style="color: rgb(189, 124, 124);">DOM</span> element interface</h2> -->
-        <!--     <ul style="margin-top: 2em;"> -->
-        <!--         <li style="font-size: 1.4em;">DOM attributes</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li> -->
-        <!--     </ul> -->
-        <!-- </section> -->
-
-        <!-- <section> -->
-        <!--     <h2><span style="color: rgb(189, 124, 124);">Custom</span> element interface</h2> -->
-        <!--     <ul style="margin-top: 2em;"> -->
-        <!--         <li style="font-size: 1.4em;">DOM attributes</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">DOM events</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element properties</li> -->
-        <!--         <li style="margin-top: 0.3em; font-size: 1.4em;">Element methods</li> -->
-        <!--     </ul> -->
-        <!-- </section> -->
-
         <section>
             <h2>Web Components inside Angular world</h2>
             <div class="fragment">
               <p style="margin-top: 1.5em;">Could look like this...</p>
               <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><div ng-controller="MyCtrl">
-  <button name="good-old-button">Button</button>
-  <mega-button 
-    nickname="Speedy">
-    Super button
-  </mega-button>
+   <x-ngduo to-the-rescue="image.gif"></x-ngduo>
 </div></code>
             </pre>
               </div>
@@ -447,23 +411,13 @@ document.body.appendChild(el);</code></pre>
             <h2>Web Components inside Angular world</h2>
             <p style="margin-top: 1.5em;">...or like this:</p>
             <pre style="font-size: 0.9em; margin-top: 1.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><div ng-controller="MyCtrl">
-  <button name="good-old-button">Button</button>
-  <mega-button 
-    nickname="{{nickname}}">
-    Super button
-  </mega-button>
+   <x-ngduo to-the-rescue="{{image}}"></x-ngduo>
 </div></code>
             </pre>
         </section>
 
-        <!-- <section> -->
-        <!--     <h1 style="font-size: 5em;">?++</h1> -->
-        <!--     <h3 class="fragment" style="font-size: 1.4em; line-height: 1.2em;">How does Angular interact with Web Components today?</h3> -->
-        <!-- </section> -->
-
         <section>
             <p style="font-size: 1.4em;">Angular doesn't know and shouldn't know about custom elements.</p>
-            <!-- <p class="fragment">Angular should treat or bind to a custom element just like any other native element</p> -->
         </section>
 
         <section>
