@@ -513,21 +513,22 @@ document.body.appendChild(el);</code></pre>
   }
 });</code>
           </pre>
-              <p style="margin-top: -1em; font-size: 0.9em;">The simplest syntax proposal is to prefix the property name with "bind-*"</p>
-              <pre style="font-size: 0.6em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><x-ngduo to-the-rescue="{{heroesOfTheHour}}" bind-sources="sources"></x-ngduo></code></pre>
+          <p style="margin-top: -1em; font-size: 0.9em;">The syntax proposal for property binding is "<code>[ ]</code>"</p>
+              <pre style="font-size: 0.6em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><x-ngduo to-the-rescue="{{heroesOfTheHour}}" [sources]="sources"></x-ngduo></code></pre>
         </section>
 
         <section>
             <h2>Event Binding</h2>
             <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><x-ngduo
-  on-rescued="celebrate()"></x-ngduo></code></pre>
+  (rescued)="celebrate()"></x-ngduo></code></pre>
 
-            <p style="margin-top: 1.8em;">One syntax proposal is to prefix the event name with "on-"</p>
+            <p style="margin-top: 1.8em;">One syntax proposal is to wrap event names in "<code>( )</code>"</p>
         </section>
 
         <section>
           <h1 style="margin-top: 0.5em; font-size: 3.5em;">Thanks!</h1>
           <!-- <h3 style="margin-top: 0.8em;">AngularJS and Web Components</h3> -->
+          <a href="http://pascalprecht.github.io/dont-stop-thinking-about-tomorrow">pascalprecht.github.io/dont-stop-thinking-about-tomorrow</a>
           <p style="margin-top: 2em;">
             <small style="font-size: 0.7em;">By <a href="http://twitter.com/carmenpopoviciu">Carmen Popoviciu</a> and
                       <a href="http://twitter.com/PascalPrecht">Pascal Precht</a> a.k.a
