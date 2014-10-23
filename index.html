@@ -504,14 +504,24 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section>
-          <h2>Listening to *any* events</h2>
-          <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><ng-duo on-volume-changed="doSomething()"></ng-duo></code></pre>
-
-          <p style="margin-top: 1.8em;">Angular 2.0 comes with a general <code>on-*</code> directive, so that any event can be listened to.</p>
+          <h2>Binding to properties</h2>
+          <pre><code ng-non-bindable>var ngDuoProto = Object.create(HTMLElement.prototype, {
+  // Element properties
+  sources: { get: function() {...}, set: function(value) {...}}
+});</code>
+          </pre>
+          <div>
+              <p>The simplest syntax proposal is to prefix the property name with "bind-" </p>
+              <pre><code ng-non-bindable><x-ngduo to-the-rescue="{{heroesOfTheHour}}" bind-sources="sources"></x-ngduo></code></pre>
+          </div>
         </section>
 
         <section>
-          <h2>Binding to properties</h2>
+            <h2>Event Binding</h2>
+            <pre style="font-size: 0.9em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><x-ngduo
+  on-rescued="celebrate()"></x-ngduo></code></pre>
+
+            <p style="margin-top: 1.8em;">One syntax proposal is to prefix the event name with "on-"</p>
         </section>
 
         <section>
