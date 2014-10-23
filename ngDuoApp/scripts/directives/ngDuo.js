@@ -16,11 +16,6 @@ angular.module('ngDuoApp')
             scope: {
                 toTheRescue: "@"
             },
-            template: '<div>' +
-                          '<img class="angular-heroes" ng-src="{{toTheRescue}}">' +
-                          '<audio ng-show="false">' +
-                              '<source src="/ngDuoApp/sounds/ThemeSong.mp3" type="audio/mpeg">' +
-                          '</audio>' +
-                      '</div>'
+      template: '<img style="border: none; margin: 0;  max-width: 500px; max-height: 500px;"class="angular-heroes" ng-src="{{toTheRescue}}">'
         }
     });

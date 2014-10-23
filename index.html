@@ -458,14 +458,14 @@ document.body.appendChild(el);</code></pre>
         </section>
 
         <section ng-controller="MainCtrl">
-            <div>
-                <div class="world-container angular-world">
-                    <p>Angular SuperHeroes</p>
+            <div style="margin-top: -6em;">
+                <div style="width: 48%; display: inline-block;" class="world-container angular-world">
+                    <!-- <p>Angular SuperHeroes</p> -->
                     <ng-duo to-the-rescue="{{heroesOfTheHour}}" ng-click="setHeroesOfTheHour()"></ng-duo>
                 </div>
 
-                <div class="world-container web-components-world">
-                    <p>Web Components SuperHeroes</p>
+                <div style="width: 48%;display: inline-block;"class="world-container web-components-world">
+                    <!-- <p>Web Components SuperHeroes</p> -->
                     <x-ngduo to-the-rescue="{{heroesOfTheHour}}" bind-polymer></x-ngduo>
                 </div>
             </div>
@@ -505,15 +505,16 @@ document.body.appendChild(el);</code></pre>
 
         <section>
           <h2>Binding to properties</h2>
-          <pre><code ng-non-bindable>var ngDuoProto = Object.create(HTMLElement.prototype, {
+          <pre style="font-size: 0.8em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable>var ngDuoProto = Object.create(HTMLElement.prototype, {
   // Element properties
-  sources: { get: function() {...}, set: function(value) {...}}
+  sources: { 
+    get: function() {...},
+    set: function(value) {...}
+  }
 });</code>
           </pre>
-          <div>
-              <p>The simplest syntax proposal is to prefix the property name with "bind-" </p>
-              <pre><code ng-non-bindable><x-ngduo to-the-rescue="{{heroesOfTheHour}}" bind-sources="sources"></x-ngduo></code></pre>
-          </div>
+              <p style="margin-top: -1em; font-size: 0.9em;">The simplest syntax proposal is to prefix the property name with "bind-*"</p>
+              <pre style="font-size: 0.6em; margin-top: 2.5em; box-shadow: none;"><code style="padding: 1em; border-radius: 0.3em;" ng-non-bindable><x-ngduo to-the-rescue="{{heroesOfTheHour}}" bind-sources="sources"></x-ngduo></code></pre>
         </section>
 
         <section>
@@ -528,7 +529,7 @@ document.body.appendChild(el);</code></pre>
           <h1 style="margin-top: 0.5em; font-size: 3.5em;">Thanks!</h1>
           <!-- <h3 style="margin-top: 0.8em;">AngularJS and Web Components</h3> -->
           <p style="margin-top: 2em;">
-            <small>By <a href="http://twitter.com/carmenpopoviciu">Carmen Popoviciu</a> and
+            <small style="font-size: 0.7em;">By <a href="http://twitter.com/carmenpopoviciu">Carmen Popoviciu</a> and
                       <a href="http://twitter.com/PascalPrecht">Pascal Precht</a> a.k.a
                       <a href="img/ng-duo.gif">ng-duo</a>
             </small>
