@@ -1,5 +1,5 @@
 // hardcoded paths of the images of our 'web components' super heroes
-var SUPER_HEROES = ['/ngDuoApp/images/4.gif', '/ngDuoApp/images/5.gif', '/ngDuoApp/images/6.gif', '/ngDuoApp/images/7.gif', '/ngDuoApp/images/8.gif', '/ngDuoApp/images/9.gif'];
+var SUPER_HEROES = ['ngDuoApp/images/4.gif', 'ngDuoApp/images/5.gif', 'ngDuoApp/images/6.gif', 'ngDuoApp/images/7.gif', 'ngDuoApp/images/8.gif', 'ngDuoApp/images/9.gif'];
 
 function generateRandomNumber(range) {
     return Math.floor(Math.random() * range);
